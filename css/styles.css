@@ -1,0 +1,64 @@
+body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 480px;
+}
+
+.slide-out {
+    width: 30%;
+    height: 100%;
+    min-width: 200px;
+    float: left;
+    background: dodgerblue;
+}
+
+#map {
+    max-width: 70%;
+    height: 100%;
+}
+
+.list--locations {
+    min-height: 30px;
+    min-width: 150px;
+    list-style-type: none;
+    padding: 0;
+    margin: 16px;
+}
+
+.list-elem-locations {
+    padding: 8px;
+    margin-top: 1px;
+    background: lightblue;
+    text-align: center;
+}
+
+.list-elem-unmarked {
+    list-style-type: none;
+}
+
+.input--filter {
+    margin: 16px;
+    align-content: center;
+    width: 100%;
+}
+
+.form--filter-input {
+    max-width: 80%;
+    align-content: center;
+}
+
+.form--filter-button {
+    max-width: 20%;
+    min-height: 1.5em;
+    padding: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.bottom--buttons {
+    text-align: right;
+    margin-right: 1em;
+}
