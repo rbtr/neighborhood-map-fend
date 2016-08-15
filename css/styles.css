@@ -8,16 +8,16 @@ body {
 }
 
 .slide-out {
-    width: 30%;
-    height: 100%;
+    width: 30vw;
+    height: 100vh;
     min-width: 200px;
     float: left;
     background: dodgerblue;
 }
 
 #map {
-    max-width: 70%;
-    height: 100%;
+    max-width: 70vw;
+    height: 100vh;
 }
 
 .list--locations {

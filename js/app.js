@@ -90,7 +90,7 @@ function ViewModel() {
     };
 
     // Pins can all be shown/hidden, so keep track of that state.
-    this.arePinsVisible = ko.observable(false);
+    this.arePinsVisible = ko.observable(true);
     this.togglePinsHint = ko.computed(function () {
         if (self.arePinsVisible()) {
             return 'Hide All Pins';
