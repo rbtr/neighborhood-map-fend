@@ -1,34 +1,35 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta title="Neighborhood Map - FEND">
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <title>Neighborhood Map - FEND</title>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
 
-<div class="slide-out">
-    <div class="input--filter">
-        <form class="form form--filter">
-            <input class="form form--filter-input" data-bind="textInput: filter" placeholder="Filter list..."/>
-        </form>
+    <div class="slide-out">
+        <div class="input--filter">
+            <form class="form form--filter">
+                <input class="form form--filter-input" data-bind="textInput: filter" placeholder="Filter list..." />
+            </form>
+        </div>
+        <ul class="list--locations" data-bind="foreach: locations">
+            <li class="list-elem-locations list-elem-unmarked" data-bind="text: name, click: $parent.onLocationSelected"></li>
+        </ul>
+        <div class="bottom--buttons">
+            <button data-bind="click: togglePins, text: togglePinsHint"></button>
+        </div>
     </div>
-    <ul class="list--locations" data-bind="foreach: locations()">
-        <li class="list-elem-locations list-elem-unmarked"
-            data-bind="text: name, click: $parent.onLocationSelected"></li>
-    </ul>
-    <div class="bottom--buttons">
-        <button data-bind="click: togglePins, text: togglePinsHint"></button>
-    </div>
-</div>
-<div id="map"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-<script src="js/foursq.js"></script>
-<script src="js/app.js"></script>
-<script src="js/maps.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeaNKnQqiKX9LRx0yLGbB-DT7d9F-1o3s&v=3&callback=initMap"></script>
+    <div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="js/foursq.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeaNKnQqiKX9LRx0yLGbB-DT7d9F-1o3s&v=3&callback=initMap" onerror="mapsError()"></script>
 </body>
 
 </html>

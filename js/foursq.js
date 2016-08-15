@@ -13,32 +13,32 @@ var apiValVersion = "20160814";
 
 
 // Add foursquare info to the passed location object.
-function fourSqLookup( location ) {
+function fourSqLookup(location) {
     var latlng = location.latlng;
     var ll = latlng.lat + "," + latlng.lng;
     $.getJSON(
         baseVenueUrl + apiKeyLatLng + ll + "&" + apiKeyClientId + apiValClientId + "&" + apiKeyClientSecret + apiValClientSecret + "&" + apiKeyVersion + apiValVersion
-    ).then( function ( result ) {
+    ).then(function (result) {
         location.fourSqResult = result;
-        if ( "200" == result.meta.code && 0 < result.response.venues.length ) {
-            location.fourSqInfo = result.response.venues[ 0 ];
+        if ("200" == result.meta.code && 0 < result.response.venues.length) {
+            location.fourSqInfo = result.response.venues[0];
             location.fourSqLatLng = {
                 "lat": location.fourSqInfo.location.lat,
                 "lng": location.fourSqInfo.location.lng
             };
-            location.name( location.fourSqInfo.name );
+            location.name(location.fourSqInfo.name);
         }
-    } );
+    });
 }
 
 // Make the HTML snippet for the infoWindow
-function getInfo( location ) {
+function getInfo(location) {
     var homePage;
     var hereNow;
     var htmlStr;
     var menuLink;
     var title = location.name();
-    var type = location.fourSqInfo.categories[ 0 ].shortName;
+    var type = location.fourSqInfo.categories[0].shortName;
 
     if (location.fourSqInfo.menu) {
         menuLink = location.fourSqInfo.menu.url;
@@ -53,7 +53,7 @@ function getInfo( location ) {
         htmlStr = htmlStr.concat("<h3>" + title + "</h3>");
     }
     if (type) {
-        htmlStr = htmlStr.concat("<p>"+ type + "</p>");
+        htmlStr = htmlStr.concat("<p>" + type + "</p>");
     }
     if (homePage) {
         htmlStr = htmlStr.concat("<a href='" + homePage + "'>Website</a>");
@@ -62,11 +62,11 @@ function getInfo( location ) {
         htmlStr = htmlStr.concat(" and ");
     }
     if (menuLink) {
-        htmlStr = htmlStr.concat("<a href='"+ menuLink + "'>Menu</a>");
+        htmlStr = htmlStr.concat("<a href='" + menuLink + "'>Menu</a>");
     }
     if (hereNow) {
-        htmlStr = htmlStr.concat("<p>"+ hereNow + "</p>");
+        htmlStr = htmlStr.concat("<p>" + hereNow + "</p>");
     }
-    htmlStr.concat("<p> Info provided by Foursquare </p>");
+    htmlStr = htmlStr.concat("<p> Info provided by Foursquare </p>");
     return htmlStr;
 }
