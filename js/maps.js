@@ -43,7 +43,8 @@ function initMap() {
 }
 
 function mapsError() {
-
+    var mapDiv = document.getElementById('map');
+    mapDiv.innerHTML = "<h3>Error connecting to Google Maps!</h3>";
 }
 
 // Geocode the addresses in the locations data, using the addresses to get latlng, info, and descriptions

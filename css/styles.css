@@ -5,19 +5,22 @@ body {
     margin: 0;
     padding: 0;
     min-width: 480px;
+    display: inline-flex;
+    flex-direction: row;
 }
 
 .slide-out {
     width: 30vw;
+    min-width: 12em;
     height: 100vh;
-    min-width: 200px;
-    float: left;
     background: dodgerblue;
+    /*    float: left;*/
 }
 
 #map {
-    max-width: 70vw;
+    width: 70vw;
     height: 100vh;
+    /* float: right; */
 }
 
 .list--locations {
