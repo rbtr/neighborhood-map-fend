@@ -20,6 +20,15 @@ This app uses the following 3rd party resources:
 * jQuery
 
 
+## Changes from Rev 1, per code review
+Added html tags in head for title, meta viewport.
+Updated CSS to be more responsive, use vh,vw instead of %.
+Added simple error failback to google maps call (just displays "error connecting..."). 
+Changed filter function to do full substring matching instead of character based matching.
+Changed default state of pins to Visible.
+Fixed Foursquare attribution not displaying.
+Removed extra js sourcefile.
+
 ## Design discussion
 I set this up as an MVVM architecture for Knockout. Where possible, the view is bound to object of the viewmodel so that Knockout can handle displaying and updating those views with the underlying object.  
 Since JS does not have "classes" as such, I separated my script files according to their purpose to help me stay organized. `app.js` is the main driver, `foursq.js` contains some helper methods and variables for interfacing with the Foursquare API, and `maps.js` contains the Google Maps API variables and helpers.  
